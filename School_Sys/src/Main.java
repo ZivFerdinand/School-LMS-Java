@@ -34,6 +34,8 @@ public class Main {
                 "██▀─▀███─▀─███▄▀▄███─▄█▀██─▄─▄██─███─▀─███─█▄▀─████▄▄▄▄─█─███▀█─▄─███▄▄▄▄─██▄─▄██▄▄▄▄─███─████─▄█▀██─█▄█─██\n" +
                 "▀▄▄█▄▄▀▄▄▀▄▄▀▀▀▄▀▀▀▄▄▄▄▄▀▄▄▀▄▄▀▄▄▄▀▄▄▀▄▄▀▄▄▄▀▀▄▄▀▀▀▄▄▄▄▄▀▄▄▄▄▄▀▄▀▄▀▀▀▄▄▄▄▄▀▀▄▄▄▀▀▄▄▄▄▄▀▀▄▄▄▀▀▄▄▄▄▄▀▄▄▄▀▄▄▄▀"+new Template().ANSI_RESET);
         System.out.println(new Template().ANSI_PURPLE+"[XAVERIAN SCHOOL SYSTEM DATABASE]"+new Template().ANSI_RESET);
+        float x = new SystemRelated().chooseNumbers(0, 2000000);
+        System.out.println(x);
         System.out.println("1. Student\n2. Teacher\n"+new Template().ANSI_RED+"[0. EXIT]"+new Template().ANSI_RESET);
         switch (new SystemRelated().chooseMenuInput(0, 2)) {
             case 1 -> new StudentMenu().studentLoginMenu(studentArrayList, lessonArrayList, teacherArrayList);

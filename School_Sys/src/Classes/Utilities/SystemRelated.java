@@ -29,6 +29,25 @@ public class SystemRelated {
             return chooseNumber(min, max);
         }
     }
+    public float chooseNumbers(float min, float max) {
+        Scanner scanner = new Scanner(System.in);
+        try {
+            float choice = scanner.nextFloat();
+            if (choice < min || choice > max) {
+                throw new IllegalArgumentException("No Choice Exists!");
+            }
+
+            return choice;
+        } catch (InputMismatchException | IllegalArgumentException e) {
+            if (e.getMessage() == null) {
+                System.out.println(new Template().ANSI_RED + "Invalid Format!" + new Template().ANSI_RESET);
+            } else
+                System.out.println(new Template().ANSI_RED + e.getMessage() + new Template().ANSI_RESET);
+
+            scanner.nextLine();
+            return chooseNumbers(min, max);
+        }
+    }
 
     public int chooseMenuInput(int min, int max) {
         Scanner scanner = new Scanner(System.in);
